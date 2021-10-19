@@ -301,7 +301,8 @@ func (c *Client) WatchSubmission(info Info, n int, line bool) (submissions []Sub
 		if endCount == len(submissions) {
 			return
 		}
-		sub := time.Now().Sub(st)
+		// sub := time.Now().Sub(st)
+		sub := time.Since(st)
 		if sub < time.Second {
 			time.Sleep(time.Duration(time.Second - sub))
 		}
