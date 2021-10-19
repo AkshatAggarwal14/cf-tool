@@ -46,7 +46,8 @@ func findCsrf(body []byte) (string, error) {
 	reg := regexp.MustCompile(`data-csrf='(.+?)'`)
 	tmp := reg.FindSubmatch(body)
 	if len(tmp) < 2 {
-		return "", errors.New("cannot find csrf")
+		// return "", errors.New("cannot find csrf")
+		fmt.Println("test")
 	}
 	return string(tmp[1]), nil
 }
